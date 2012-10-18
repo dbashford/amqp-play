@@ -1,0 +1,7 @@
+Web client, upon request for search results, creates queue to receive eventual search results, connects to searching exchange and publishes message with replyTo of the search results queue name.  Search service is bound to the searching exchange, gets message, executes search, waits 15 seconds (to allow for watching of events on Rabbit web console), and publishes search results onto default exchange with routing key of the search results queue.  Web client receives results, sends them to client via websocket connection, and closes the search results queue.
+
+In two terminal windows:
+1) coffee amqp_server.coffee
+2) coffee web_server.coffee
+
+Then open http://localhost:8080 to view test client page

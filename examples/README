@@ -1,0 +1,6 @@
+Various node-amqp examples.  All assume RabbitMQ is installed as well as node, npm.  Before running any of the examples run the following to get the proper node libraries installed...
+
+npm install amqp
+npm install now
+npm install coffee-script
+
